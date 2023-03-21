@@ -1,0 +1,78 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		codigoBarras()
+		LocalizarCodigoBarras()
+	}
+
+	funcao LocalizarCodigoBarras() {
+		inteiro codigo, sessao[] = {}
+		cadeia materias[] = {}
+		
+		escreva("Insira o código de barras do livro (Mínimo de 7 dígitos): ")
+		leia(codigo)
+		limpa()
+		
+		se (codigo<=2000000){
+			para (inteiro posicao = 1; posicao < 2; posicao++)
+		{
+			escreva("Livro de ", materias[posicao]," disponível na sessão "+sessao[posicao])
+		}
+		}
+		senao se (codigo<=4000000){
+			para (inteiro posicao = 2; posicao < 3; posicao++)
+		{
+			escreva("Livro de ", materias[posicao]," disponível na sessão "+sessao[posicao])
+		}
+		}
+		senao se (codigo<=6000000){
+			para (inteiro posicao = 3; posicao < 4; posicao++)
+		{
+			escreva("Livro de ", materias[posicao]," disponível na sessão "+sessao[posicao])
+		}
+		}
+		senao se (codigo<=8000000){
+			para (inteiro posicao = 4; posicao < 5; posicao++)
+		{
+			escreva("Livro de ", materias[posicao]," disponível na sessão "+sessao[posicao])
+		}
+		}
+		senao se (codigo<=10000000){
+			para (inteiro posicao = 5; posicao < 6; posicao++)
+		{
+			escreva("Livro de ", materias[posicao]," disponível na sessão "+sessao[posicao])
+		}
+		}
+		senao se (codigo<=12000000){
+			para (inteiro posicao = 6; posicao < 7; posicao++)
+		{
+			escreva("Livro de ", materias[posicao]," disponível na sessão "+sessao[posicao])
+		}
+		}
+		senao se (codigo<=14000000){
+			para (inteiro posicao = 7; posicao < 8; posicao++)
+		{
+			escreva("Livro de ", materias[posicao]," disponível na sessão "+sessao[posicao])
+		}
+		}
+		senao {
+			escreva("Opção inválida!")
+		}
+	}
+
+	funcao codigoBarras() {
+		escreva("\t\tLISTA DE CÓDIGOS")
+		escreva("\n----------------------------------------------------\n") 
+		escreva("Livros de 1 têm códigos de 0000001 até 2000000\n")
+		escreva("Livros de 2 têm códigos de 2000001 até 4000000\n")
+		escreva("Livros de 3 têm códigos de 4000001 até 6000000\n")
+		escreva("Livros de 4 têm códigos de 6000001 até 8000000\n")
+		escreva("Livros de 5 têm códigos de 8000001 até 10000000\n")
+		escreva("Livros de 6 têm códigos de 10000001 até 12000000\n")
+		escreva("Livros de 7 têm códigos de 12000001 até 14000000\n")
+		escreva("----------------------------------------------------\n")
+	}
+
+}
