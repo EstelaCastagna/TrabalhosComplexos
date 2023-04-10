@@ -1,0 +1,22 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro parametro = 6
+
+		escreva("Resultado:"+func1(parametro))
+	}
+
+	funcao inteiro func1(inteiro numero){
+		se (numero==0){
+			retorne 1
+		}
+		senao se (numero < 0){
+			retorne -1
+		}
+		senao {
+			retorne numero * func1(numero-1)
+		}
+	}
+}
