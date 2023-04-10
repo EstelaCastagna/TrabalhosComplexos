@@ -1,9 +1,9 @@
 programa
 {
-	
+	inteiro reta_A, reta_B, reta_C
 	funcao inicio()
 	{
-		inteiro reta_A, reta_B, reta_C
+		
 		
 		escreva("Informe a reta A: ")
 		leia(reta_A)
@@ -15,6 +15,7 @@ programa
 		se (reta_A > reta_B e reta_A > reta_C){
 			se(reta_C + reta_B > reta_A){
 			escreva("É possível criar um triângulo.")
+			tipo()
 		}
 		senao {
 			escreva("Não é possível criar um triângulo.")
@@ -23,6 +24,7 @@ programa
 		senao se (reta_C > reta_A e reta_C > reta_B){
 			se (reta_A + reta_B > reta_C){
 				escreva("É possível criar um triângulo.")
+				tipo()
 			}
 			senao {
 			escreva("Não é possível criar um triângulo.")
@@ -31,6 +33,7 @@ programa
 		senao se (reta_B > reta_A e reta_B > reta_C){
 			se (reta_A + reta_C > reta_B){
 				escreva("É possível criar um triângulo.")
+				tipo()
 		}
 			senao {
 			escreva("Não é possível criar um triângulo.")
@@ -40,4 +43,17 @@ programa
 			escreva("Inválido")
 		}
 	}
+
+	funcao tipo()
+	{
+		se ((reta_A == reta_B) e (reta_A == reta_C) e (reta_C == reta_B)){
+			escreva("\nTriângulo equilátero.\n")  
+		}
+		senao se ((reta_A == reta_B) ou (reta_A == reta_C) ou (reta_C == reta_B)){
+			escreva("\nTriângulo isósceles.\n")  
+		}
+		senao{
+			escreva("\nTriângulo escaleno.\n")
+	}
+}
 }
