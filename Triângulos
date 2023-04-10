@@ -1,0 +1,43 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro reta_A, reta_B, reta_C
+		
+		escreva("Informe a reta A: ")
+		leia(reta_A)
+		escreva("Informe a reta B: ")
+		leia(reta_B)
+		escreva("Informe a reta C: ")
+		leia(reta_C)
+		
+		se (reta_A > reta_B e reta_A > reta_C){
+			se(reta_C + reta_B > reta_A){
+			escreva("É possível criar um triângulo.")
+		}
+		senao {
+			escreva("Não é possível criar um triângulo.")
+		}
+		}
+		senao se (reta_C > reta_A e reta_C > reta_B){
+			se (reta_A + reta_B > reta_C){
+				escreva("É possível criar um triângulo.")
+			}
+			senao {
+			escreva("Não é possível criar um triângulo.")
+		}
+		}
+		senao se (reta_B > reta_A e reta_B > reta_C){
+			se (reta_A + reta_C > reta_B){
+				escreva("É possível criar um triângulo.")
+		}
+			senao {
+			escreva("Não é possível criar um triângulo.")
+		}
+		}
+		senao {
+			escreva("Inválido")
+		}
+	}
+}
