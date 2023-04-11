@@ -1,0 +1,60 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro opcao, n1, n2
+		
+		escreva("Digite o valor do 1º número: ")
+		leia (n1)
+		escreva("Digite o valor do 2º número: ")
+		leia (n2)
+		limpa()
+		escreva("CALCULADORA\n")
+		escreva("1-Soma\n")
+		escreva("2-Subtração\n")
+		escreva("3-Divisão\n")
+		escreva("4-Multiplicação\n")
+		escreva("Escolha a opção desejada: ")
+		leia (opcao)
+		limpa()
+
+		escolha (opcao) {
+			caso 1:
+			escreva("O resultado da soma é "+soma(n1,n2))
+			pare
+			caso 2:
+			escreva("O resultado da subtração é "+sub(n1,n2))
+			pare
+			caso 3:
+			escreva("O resultado da divisão é "+div(n1,n2))
+			pare
+			caso 4:
+			escreva("O resultado da multiplicação é "+mult(n1,n2))
+			pare
+			caso contrario:
+			escreva("Opção inválida")
+			pare
+		}
+	}
+		
+	funcao inteiro soma (inteiro v1, inteiro v2){
+		inteiro resultado = v1+v2
+		retorne resultado
+	}
+
+	funcao real sub(real v1, real v2){
+		real resultado = v1-v2
+		retorne resultado
+	}
+
+	funcao real div(real v1, real v2){
+		real resultado = v1/v2
+		retorne resultado
+	}
+	
+	funcao inteiro mult (inteiro v1, inteiro v2){
+		inteiro resultado = v1*v2
+		retorne resultado
+	}	
+}
