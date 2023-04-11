@@ -1,0 +1,22 @@
+programa
+{
+	real parametro = 1200.00
+	funcao inicio()
+	{
+		inteiro retirada
+		escreva("Insira o valor que deseja sacar: ")
+		leia(retirada)
+		limpa()
+		se (retirada <= parametro){
+		escreva("Seu novo saldo é: "+saque(retirada))	
+		}
+		senao {
+			escreva("Saldo insuficiente.")
+		}
+	}
+
+	funcao real saque (real saldo){
+		real resultado = parametro - saldo
+		retorne resultado
+	}
+}
