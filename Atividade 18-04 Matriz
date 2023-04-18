@@ -1,0 +1,62 @@
+//Atividade 1 - Matriz
+programa{
+   
+  funcao inicio(){
+  
+    inteiro matriz[3][3], calc=0
+
+    
+    para(inteiro linha = 0; linha < 3; linha++){
+      para(inteiro coluna = 0; coluna < 3; coluna++){
+        escreva("Digite o valor da posição [", linha, "][", coluna, "]: ")
+        leia(matriz[linha][coluna])
+        calc = calc + matriz[linha][coluna]
+      }
+    }
+	limpa()
+	escreva ("A soma dos números é ",calc, "\n")
+}
+}
+
+//Atividade 2 - Matriz
+programa{
+   
+  funcao inicio(){
+  
+    inteiro matriz[3][3], calc=0
+
+    
+    para(inteiro linha = 0; linha < 3; linha++){
+      para(inteiro coluna = 0; coluna < 3; coluna++){
+        escreva("Digite o valor da posição [", linha, "][", coluna, "]: ")
+        leia(matriz[linha][coluna])
+        calc = calc + matriz[linha][2]
+      }
+    }
+	limpa()
+	escreva ("A soma dos números da 2º coluna é ", calc, "\n")
+}
+}
+
+//Atividade 3 - Matriz
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro matriz[6][6], maior = 0
+
+    
+    para(inteiro linha = 0; linha < 6; linha++){
+      para(inteiro coluna = 0; coluna < 6; coluna++){
+        escreva("Digite o valor da posição [", linha, "][", coluna, "]: ")
+        leia(matriz[linha][coluna])
+        se (matriz[linha][coluna] > 10){
+        	maior = maior +1
+        }
+      }
+    }
+	limpa()
+	escreva ("Foram escritos ", maior," números maiores do que 10.\n")
+}
+}
