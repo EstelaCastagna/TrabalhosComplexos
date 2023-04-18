@@ -1,0 +1,23 @@
+programa{
+   
+  funcao inicio(){
+  
+    inteiro l, c, mat[5][5] 
+
+    // Lê uma matriz 3 por 3 do teclado
+    para(l = 0; l < 5; l++){
+      para(c = 0; c < 5; c++){
+        escreva("Digite o valor da posição ", l, " ", c, ": ")
+        leia(mat[l][c])
+      }
+    }
+    limpa()
+    // Imprime uma matriz 3 por 3
+    para(l = 0; l < 5; l++){
+      para(c = 0; c < 5; c++){
+        escreva(mat[l][c], " ")
+      }
+      escreva("\n")
+    }
+  }
+}
