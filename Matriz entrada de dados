@@ -2,20 +2,20 @@ programa{
    
   funcao inicio(){
   
-    inteiro l, c, mat[5][5] 
+    inteiro matriz[5][5] 
 
-    // Lê uma matriz 3 por 3 do teclado
-    para(l = 0; l < 5; l++){
-      para(c = 0; c < 5; c++){
-        escreva("Digite o valor da posição ", l, " ", c, ": ")
-        leia(mat[l][c])
+    // Lê uma matriz 5 por 5 do teclado
+    para(inteiro linha = 0; linha < 5; linha++){
+      para(inteiro coluna = 0; coluna < 5; coluna++){
+        escreva("Digite o valor da posição ", linha, " ", coluna, ": ")
+        leia(matriz[linha][coluna])
       }
     }
-    limpa()
-    // Imprime uma matriz 3 por 3
-    para(l = 0; l < 5; l++){
-      para(c = 0; c < 5; c++){
-        escreva(mat[l][c], " ")
+	limpa()
+    // Imprime uma matriz 5 por 5
+    para(inteiro linha = 0; linha < 5; linha++){
+      para(inteiro coluna = 0; coluna < 5; coluna++){
+       escreva ("[", matriz[linha][coluna], "]")
       }
       escreva("\n")
     }
