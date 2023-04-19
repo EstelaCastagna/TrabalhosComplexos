@@ -1,0 +1,27 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		caracter nome[5], aux
+
+		para (inteiro i = 0; i<5; i++){
+			escreva("Digite o nome: ")
+			leia (nome[i])
+		}
+
+		para (inteiro i = 0; i<5; i++){
+			para (inteiro j = 0+i; j<5; j++){
+				se (nome[i]>nome[j]){
+					aux = nome[i]
+					nome[i] = nome[j]
+					nome[j] = aux
+				}
+			}
+		}
+
+		para (inteiro i = 0; i<5; i++){
+			escreva (nome[i],"\n")
+		}
+	}
+}
