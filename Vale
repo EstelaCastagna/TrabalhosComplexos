@@ -1,0 +1,316 @@
+programa
+{
+	inclua biblioteca Calendario --> calen
+	
+	funcao inicio() {
+		
+		cadeia usuario, senha, iniciar
+		
+		escreva ("-----------------------\n")
+		escreva("\t LOGIN\t\n")
+		escreva ("-----------------------\n")
+		escreva("NOME DE USUÁRIO: ")
+		leia (usuario)
+		escreva ("SENHA: ")
+		leia (senha)
+		limpa()
+
+		se (usuario == "ADMIN" e senha == "1234") {
+			escreva("Login efetuado!")
+			escreva("\nIr ao menu (Sim/Não)? ")
+			leia(iniciar)
+			limpa()
+			menu()
+		}
+		senao se (usuario != "ADMIN" e senha == "1234") {
+			escreva("Usuário inválido!")
+			retornar()
+			
+		}
+		senao se (usuario == "ADMIN" e senha != "1234") {
+			escreva("Senha inválida!")
+			retornar()
+		}
+		senao { 
+			escreva ("Usuário e senha inválidos")
+			retornar()
+		}
+	
+		
+	}
+	funcao menu() {
+		inteiro opcao
+		
+		escreva("MENU\n")
+		para(inteiro i = 0; i < 50; i++) {
+		  escreva ("-")
+		}
+		escreva("\n1) Ponto Eletrônico\n")
+		escreva("2) Gerência\n")
+		escreva("3) Relatório\n")
+		escreva("4) Cadastro de Funcionário\n")
+		escreva("5) Setores\n")
+		escreva("6) Sair\n")
+		para(inteiro i = 0; i < 50; i++) {
+		  escreva ("-")
+		}
+		escreva("\nDigite a opção escolhida: ")
+		leia (opcao)
+		limpa()
+
+		escolha (opcao) {
+			caso 1:
+			limpa()
+			pontoEletronico()
+			pare
+
+			caso 2:
+			limpa()
+			gerencia()
+			pare
+
+			caso 3:
+			limpa()
+			relatorio()
+			pare
+
+			caso 4:
+			limpa()
+			cadastroFuncionario()
+			pare
+
+			caso 5:
+			limpa()
+			setores()
+			pare
+
+			caso 6:
+			limpa()
+			escreva ("Programa Finzalizado!\n")
+			pare
+
+			caso contrario:
+			limpa()
+			escreva ("Opção Inválida")
+			retornarMenu()
+		}
+		
+	}
+	funcao pontoEletronico (){
+		
+		cadeia nome, ponto
+		inteiro hora_atual, entrada_h, entrada_m, entrada_s, saida_h, saida_m, saida_s, minuto_atual, segundo_atual
+		
+		escreva ("Entrada ou saída (E/S)? ")
+		leia (ponto)
+		limpa()
+		se (ponto == "E" ou ponto == "e") {
+		escreva ("Insira o nome do funcionário: ")
+		leia (nome)
+		limpa()
+		entrada_h = calen.hora_atual(falso)
+		entrada_m = calen.minuto_atual()
+		entrada_s = calen.segundo_atual()
+		escreva ("-----------------------\n")
+		escreva (nome, " ENTRADA ", entrada_h,":", entrada_m,":", entrada_s)
+		escreva ("\n-----------------------\n")
+		retornarMenu()
+		}
+		senao se (ponto == "S" ou ponto == "s"){
+		escreva ("Insira o nome do funcionário: ")
+		leia (nome)
+		limpa()
+		saida_h = calen.hora_atual(falso)
+		saida_m = calen.minuto_atual()
+		saida_s = calen.segundo_atual()
+		escreva ("-----------------------\n")
+		escreva (nome, " SAÍDA ", saida_h,":", saida_m,":", saida_s)
+		escreva ("\n-----------------------\n")
+		retornarMenu()
+		}
+		senao {
+			escreva ("Opção Inválida!")
+			
+		}
+		
+	}
+
+	funcao gerencia() {
+
+		cadeia volta, sair
+		inteiro opcao2
+		
+		escreva("SELECIONE UMA OPÇÃO: \n")
+		escreva ("----------------------------\n")
+		escreva("1) Relatório\n")
+		escreva("2) Cadastro de Funcionário\n")
+		escreva("3) Setores\n")
+		escreva("4) Acesso às Camêras\n")
+		escreva("5) Financeiro\n")
+		escreva("6) Voltar ao Menu Inicial\n")
+		escreva ("----------------------------\n")
+		escreva("Insira a opção desejada: ")
+		leia (opcao2)
+
+		escolha (opcao2) {
+			
+			caso 1:
+			limpa()
+			relatorio()
+			pare
+
+			caso 2:
+			limpa()
+			cadastroFuncionario()
+			pare
+
+			caso 3:
+			limpa()
+			setores()
+			pare
+
+			caso 4:
+			limpa()
+			escreva("Câmeras exibidas. Digite 'Sair' quando desejar.\n")
+			leia (sair)
+			retornarMenu() 
+			pare
+
+			caso 5:
+			limpa()
+			financeiro()
+			pare
+
+			caso 6:
+			limpa()
+			retornarMenu()
+			pare
+
+			caso contrario:
+			limpa()
+			escreva ("Opção Inválida")
+			escreva("\nTentar novamente (Sim/Não)? ")
+		leia (volta)
+		se (volta == "Sim" ou volta == "sim"){
+			limpa()
+			gerencia() 
+		}
+		senao {
+			limpa()
+			escreva ("Programa Finalizado!\n")
+		}
+		}
+		
+	}
+
+	funcao relatorio() {
+		cadeia setor[] = { "Construção", "Segurança" , "Equipe Gestão", "Recursos H.", "Programação" }
+		inteiro funcionario[] = { 63, 20, 40, 15, 32 }
+
+		escreva(" RELAÇÃO DE FUNCIONÁRIOS")
+		escreva ("\n--------------------------\n")
+		
+		
+		para (inteiro posicao = 0; posicao < 5; posicao++)
+		{
+			escreva (setor[posicao], "\t\t", funcionario [posicao], "\n")
+		}
+		escreva ("--------------------------\n")
+		escreva("Total de funcionários: 170\n")
+		retornarMenu()
+	}
+
+	funcao cadastroFuncionario() {
+		
+		cadeia nome_f, email, rua, bairro
+		inteiro idade, n, telefone, cpf
+
+		
+		escreva ("------------------------\n")
+		escreva ("\tCADASTRO\t")
+		escreva ("\n------------------------\n")
+		escreva ("Nome: ")
+		leia (nome_f)
+		escreva ("Idade: ")
+		leia (idade)
+		escreva ("Telefone: ")
+		leia (telefone)
+		escreva ("Email: ")
+		leia (email)
+		escreva ("CPF: ")
+		leia (cpf)
+		escreva ("Rua: ")
+		leia (rua)
+		escreva ("Bairro: ")
+		leia (bairro)
+		escreva ("Número: ")
+		leia (n)
+		limpa()
+		escreva ("Cadastro do(a) ", nome_f," efetuado.")
+		retornarMenu()
+	}
+
+	funcao setores() {
+		escreva("Setores da empresa: \n")
+		escreva ("------------------------\n")
+		escreva("\nConstrução\n")
+		escreva("Segurança\n")
+		escreva("Equipe de Gestão\n")
+		escreva("Recursos Humanos\n")
+		escreva("Programação\n")
+		escreva ("------------------------\n")
+		retornarMenu()
+	}
+
+	funcao financeiro() {
+		inteiro meses
+		real renda, bruto = 0.0, despesa, saldo
+		
+		escreva ("Quantos meses deseja analisar? ")
+		leia (meses)
+		para (inteiro i=1; i<= meses; i++){
+			escreva ("\nInsira a renda bruta do mês ", i, ": ")
+			leia (renda)
+			bruto = bruto + renda
+		}
+		limpa()
+		escreva ("A renda total bruta dos ", meses, " meses é de R$ "+ bruto)
+		escreva ("\nInsira o total de despesas dos ", meses, " meses: ")
+		leia (despesa)
+		saldo = bruto - despesa
+		limpa()
+		escreva ("O saldo da empresa é de R$ "+saldo)
+		retornarMenu()
+		 
+	}
+	
+	funcao retornar() {
+		
+		cadeia volta
+		escreva("\nTentar novamente (Sim/Não)? ")
+		leia (volta)
+		se (volta == "Sim" ou volta == "sim"){
+			limpa()
+			inicio() 
+		}
+		senao {
+			limpa()
+			escreva ("Programa Finalizado!\n")
+		}
+	}
+	funcao retornarMenu() {
+		
+		cadeia voltaMenu
+		escreva("\nVoltar ao menu (Sim/Não)? ")
+		leia (voltaMenu)
+		se (voltaMenu == "Sim" ou voltaMenu == "sim"){
+			limpa()
+			menu() 
+		}
+		senao {
+			limpa()
+			escreva ("Programa Finalizado!\n")
+		}
+	}
+}
+
